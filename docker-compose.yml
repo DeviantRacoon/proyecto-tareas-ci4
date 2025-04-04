@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  mariadb:
+    image: mariadb:11.3
+    container_name: ci4_mariadb
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: ci4db
+      MYSQL_USER: ci4user
+      MYSQL_PASSWORD: secret
+    ports:
+      - "3306:3306"
